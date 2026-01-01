@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // Bajamos la calidad al 50% para que suba rápido a la nube
     final pickedFile = await picker.pickImage(
       source: ImageSource.camera,
-      imageQuality: 50,
+      imageQuality: 100,
     );
 
     if (pickedFile != null) {
