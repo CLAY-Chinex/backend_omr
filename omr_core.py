@@ -88,7 +88,7 @@ def detectar_anchas_y_transformar(img_original):
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     
     # Binarización inversa
-    _, thresh = cv2.threshold(blurred, 100, 255, cv2.THRESH_BINARY_INV)
+    _, thresh = cv2.threshold(blurred, 110, 255, cv2.THRESH_BINARY_INV)
 
     cnts, _ = cv2.findContours(
         thresh.copy(),
@@ -157,7 +157,7 @@ def detectar_anchas_y_transformar(img_original):
     # 2. AUTOCORRECCIÓN DE ORIENTACIÓN POR MARCAS (2.5%)
     # ==========================================================
     h, w = img_aplanada.shape
-    banda = 0.025  # 2.5% al ras de la hoja
+    banda = 0.03  # 3 % al ras de la hoja
 
     # Regiones de análisis
     roi_izq = img_aplanada[:, 0:int(w * banda)]
