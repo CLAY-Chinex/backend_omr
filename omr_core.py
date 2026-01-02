@@ -88,7 +88,7 @@ def detectar_anchas_y_transformar(img_original):
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     
     # Binarización inversa
-    _, thresh = cv2.threshold(blurred, 110, 255, cv2.THRESH_BINARY_INV)
+    _, thresh = cv2.threshold(blurred, 100, 255, cv2.THRESH_BINARY_INV)
 
     cnts, _ = cv2.findContours(
         thresh.copy(),
